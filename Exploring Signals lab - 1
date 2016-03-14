@@ -1,0 +1,27 @@
+int ledPin = 12; //Changed cable to pin 12
+int sensorInput = A0;
+
+void setup() {
+
+  Serial.begin(9600);
+
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+
+  int lightLevel = analogRead(A0);
+
+  Serial.println(lightLevel);
+
+  if (lightLevel > 520) {
+    digitalWrite(ledPin, LOW);
+
+  }
+
+  else {
+    digitalWrite(ledPin, HIGH);
+  }
+}
+
+//digitalWrite(ledPin, HIGH);
